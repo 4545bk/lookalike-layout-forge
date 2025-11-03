@@ -1,9 +1,21 @@
 import { CheckCircle2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const TransactionSuccess = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Get transaction data from navigation state or use defaults
+  const transactionData = location.state || {
+    transactionNumber: "CI35L2LCOZ",
+    transactionTime: "2025/09/03 14:43:40",
+    transactionType: "Transfer To Bank",
+    transactionTo: "BETELHEM GIZAW AYANO",
+    accountNumber: "1000404416198",
+    bankName: "Commercial Bank of Ethiopia",
+    amount: "503.00",
+  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-between p-6 py-12">
@@ -20,39 +32,39 @@ const TransactionSuccess = () => {
 
         {/* Amount */}
         <div className="text-5xl font-bold text-foreground mb-12">
-          -503.00 <span className="text-3xl text-muted-foreground">(ETB)</span>
+          -{transactionData.amount} <span className="text-3xl text-muted-foreground">(ETB)</span>
         </div>
 
         {/* Transaction Details */}
         <div className="w-full space-y-4 border-t border-border pt-6">
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Transaction Number</span>
-            <span className="font-medium text-right">CI35L2LCOZ</span>
+            <span className="font-medium text-right">{transactionData.transactionNumber}</span>
           </div>
 
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Transaction Time:</span>
-            <span className="font-medium text-right">2025/09/03 14:43:40</span>
+            <span className="font-medium text-right">{transactionData.transactionTime}</span>
           </div>
 
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Transaction Type:</span>
-            <span className="font-medium text-right">Transfer To Bank</span>
+            <span className="font-medium text-right">{transactionData.transactionType}</span>
           </div>
 
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Transaction To:</span>
-            <span className="font-medium text-right">BETELHEM GIZAW AYANO</span>
+            <span className="font-medium text-right">{transactionData.transactionTo}</span>
           </div>
 
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Bank Account Number:</span>
-            <span className="font-medium text-right">1000404416198</span>
+            <span className="font-medium text-right">{transactionData.accountNumber}</span>
           </div>
 
           <div className="flex justify-between items-start py-3">
             <span className="text-muted-foreground">Bank Name:</span>
-            <span className="font-medium text-right">Commercial Bank of Ethiopia</span>
+            <span className="font-medium text-right">{transactionData.bankName}</span>
           </div>
         </div>
 

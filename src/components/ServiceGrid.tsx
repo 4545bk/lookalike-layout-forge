@@ -53,7 +53,7 @@ export const ServiceGrid = () => {
       id: "bank",
       name: "Transfer\nto Bank",
       icon: <Landmark className="w-10 h-10 text-primary" />,
-      route: "/transaction-success",
+      route: "/transfer-to-bank",
     },
   ];
 
