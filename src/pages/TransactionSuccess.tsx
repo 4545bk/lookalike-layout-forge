@@ -22,8 +22,8 @@ const TransactionSuccess = () => {
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-md">
         {/* Success Icon */}
         <div className="mb-6">
-          <div className="w-24 h-24 rounded-full bg-success flex items-center justify-center">
-            <CheckCircle2 className="w-16 h-16 text-success-foreground" />
+          <div className="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center">
+            <CheckCircle2 className="w-14 h-14 text-success" strokeWidth={2.5} />
           </div>
         </div>
 
@@ -85,7 +85,7 @@ const TransactionSuccess = () => {
       {/* Finished Button */}
       <Button
         onClick={() => navigate("/")}
-        className="w-full max-w-md bg-success hover:bg-success/90 text-success-foreground text-lg py-6 rounded-2xl mt-8"
+        className="w-full max-w-md bg-success hover:bg-success/90 text-white text-base font-semibold py-6 rounded-xl mt-8 shadow-lg"
       >
         Finished
       </Button>
