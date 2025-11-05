@@ -1,5 +1,6 @@
 import { Search, Bell, ChevronDown } from "lucide-react";
 import telebirrLogo from "@/assets/telebirr-logo.png";
+import ethioTelecomLogo from "@/assets/ethio-telecom-logo.png";
 
 interface AppHeaderProps {
   userName?: string;
@@ -32,8 +33,9 @@ export const AppHeader = ({ userName = "YAEL", greeting = "Selam, NA" }: AppHead
       </div>
 
       {/* Logo bar */}
-      <div className="relative flex items-center justify-center px-4 py-3 bg-card border-b">
-        <img src={telebirrLogo} alt="Ethio Telecom & Telebirr" className="h-10 object-contain" />
+      <div className="relative flex items-center justify-between px-4 py-3 bg-card border-b">
+        <img src={ethioTelecomLogo} alt="Ethio Telecom" className="h-10 object-contain" />
+        <img src={telebirrLogo} alt="Telebirr" className="h-10 object-contain" />
       </div>
 
       {/* User info bar */}
@@ -63,9 +65,13 @@ export const AppHeader = ({ userName = "YAEL", greeting = "Selam, NA" }: AppHead
         </div>
       </div>
 
-      {/* Tagline */}
-      <div className="relative bg-primary/90 px-4 py-1 text-center">
-        <p className="text-xs text-primary-foreground/80">One app for all needs</p>
+      {/* Scrolling Tagline Banner */}
+      <div className="relative bg-[#FFA500] px-4 py-1.5 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <span className="text-xs font-medium text-white uppercase tracking-wide">
+            ONE APP FOR ALL YOUR NEEDS! • ONE APP FOR ALL YOUR NEEDS! • ONE APP FOR ALL YOUR NEEDS! • 
+          </span>
+        </div>
       </div>
     </header>
   );
