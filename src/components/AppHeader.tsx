@@ -1,4 +1,5 @@
 import { Search, Bell, ChevronDown } from "lucide-react";
+import telebirrLogo from "@/assets/telebirr-logo.png";
 
 interface AppHeaderProps {
   userName?: string;
@@ -31,17 +32,8 @@ export const AppHeader = ({ userName = "YAEL", greeting = "Selam, NA" }: AppHead
       </div>
 
       {/* Logo bar */}
-      <div className="relative flex items-center justify-between px-4 py-3 bg-card border-b">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-            <span className="text-primary font-bold text-xs">ET</span>
-          </div>
-          <span className="text-sm font-semibold">ethio telecom</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-lg font-bold text-primary">ቴሌቢር</span>
-          <span className="text-sm text-secondary">telebirr</span>
-        </div>
+      <div className="relative flex items-center justify-center px-4 py-3 bg-card border-b">
+        <img src={telebirrLogo} alt="Ethio Telecom & Telebirr" className="h-10 object-contain" />
       </div>
 
       {/* User info bar */}
@@ -69,6 +61,11 @@ export const AppHeader = ({ userName = "YAEL", greeting = "Selam, NA" }: AppHead
             <ChevronDown className="w-5 h-5" />
           </button>
         </div>
+      </div>
+
+      {/* Tagline */}
+      <div className="relative bg-primary/90 px-4 py-1 text-center">
+        <p className="text-xs text-primary-foreground/80">One app for all needs</p>
       </div>
     </header>
   );
