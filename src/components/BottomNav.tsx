@@ -10,7 +10,7 @@ export const BottomNav = () => {
     { id: "payment", label: "Payment", icon: CreditCard, route: "#" },
     { id: "apps", label: "Apps", icon: Grid3x3, route: "#" },
     { id: "engage", label: "Engage", icon: MessageCircle, route: "#" },
-    { id: "account", label: "Account", icon: User, route: "#" },
+    { id: "account", label: "Account", icon: User, route: "/signin" },
   ];
 
   const isActive = (route: string) => {

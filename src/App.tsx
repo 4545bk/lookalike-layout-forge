@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 import TransactionSuccess from "./pages/TransactionSuccess";
 import TransferToBank from "./pages/TransferToBank";
 import NotFound from "./pages/NotFound";
@@ -18,6 +20,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/transfer-to-bank" element={<TransferToBank />} />
           <Route path="/transaction-success" element={<TransactionSuccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
